@@ -74,7 +74,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Ana Sayfa',
-            backgroundColor: Colors.grey,
+            backgroundColor: Colors.blue,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.whatshot),
@@ -89,17 +89,17 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           BottomNavigationBarItem(
             icon: Icon(Icons.sports_soccer),
             label: 'Spor',
-            backgroundColor: Colors.blue,
+            backgroundColor: Colors.green,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.health_and_safety),
             label: 'Sağlık',
-            backgroundColor: Colors.green,
+            backgroundColor: Colors.grey,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.settings),
             label: 'Ayarlar',
-            backgroundColor: Colors.grey,
+            backgroundColor: Colors.blue,
           ),
         ],
         currentIndex: _selectedIndex,

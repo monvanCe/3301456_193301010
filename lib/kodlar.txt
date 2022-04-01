@@ -1,0 +1,100 @@
+import 'dart:js';
+
+import 'package:flutter/material.dart';
+
+
+void main() => runApp(const MyApp());
+
+int seciliSayfa = 0;
+void sayfaDegistir(int index) {
+  setState(() {
+    seciliSayfa = index;
+  });
+}
+
+void setState(Null Function() param0) {
+}
+
+Widget sayfa1(){
+  return Container(
+    child: Center(
+      child: Text('Anasayfa'),
+    ),
+  );
+}
+
+Widget sayfa2(){
+  return Container(
+    child: Center(
+      child: Text('Son Haberler'),
+    ),
+  );
+}
+
+Widget sayfa3(){
+  return Container(
+  child: Center(
+    child: Text('Kategoriler'),
+    ),
+  );
+}
+
+Widget sayfa4(){
+  return Container(
+child: Center(
+  child: Text('İletişim'),
+    ),
+  );
+}
+
+Widget sayfaGoster(int seciliSayfa) {
+  if (seciliSayfa == 0) {
+    return sayfa1();
+  } else if (seciliSayfa == 1) {
+    return sayfa2();
+  } else if (seciliSayfa == 2) {
+    return sayfa3();
+  } else if (seciliSayfa == 3) {
+    return sayfa4();
+  }
+}
+
+
+// ignore: non_constant_identifier_names, prefer_typing_uninitialized_variables
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('BottomNavigationBar Sample'),
+      ),
+      body: Center(
+        child: _widgetOptions.elementAt(_selectedIndex),
+      ),
+bottomNavigationBar: Theme(
+        data: Theme.of(context).copyWith(canvasColor: Colors.redAccent),
+        child: BottomNavigationBar(
+        currentIndex: seciliSayfa,
+        onTap: sayfaDegistir,
+        type: BottomNavigationBarType.fixed,
+        fixedColor: Colors.white,
+        items: <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            title: Text('Anasayfa', style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16),),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.last_page),
+            title: Text('Son Haberler', style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16),),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.list),
+            title: Text('Kategoriler', style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16),),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.contact_phone),
+            title: Text('İletişim', style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16),),
+          ),
+        ],
+      ),
+    );
+  }
