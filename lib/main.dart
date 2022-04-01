@@ -1,110 +1,249 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(const MyApp());
+void main() {
+  runApp(const MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  static const String _title = 'Flutter Code Sample';
-
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: _title,
-      home: MyStatefulWidget(),
+    return MaterialApp(
+      title: 'Bottom NavBar Demo',
+      theme: ThemeData(
+        primaryColor: const Color(0xff2F8D46),
+        splashColor: Colors.transparent,
+        highlightColor: Colors.transparent,
+        hoverColor: Colors.transparent,
+      ),
+      debugShowCheckedModeBanner: false,
+      home: const HomePage(),
     );
   }
 }
 
-class MyStatefulWidget extends StatefulWidget {
-  const MyStatefulWidget({Key? key}) : super(key: key);
+class HomePage extends StatefulWidget {
+  const HomePage({Key? key}) : super(key: key);
 
   @override
-  State<MyStatefulWidget> createState() => _MyStatefulWidgetState();
+  _HomePageState createState() => _HomePageState();
 }
 
-class _MyStatefulWidgetState extends State<MyStatefulWidget> {
-  int _selectedIndex = 0;
-  static const TextStyle optionStyle =
-      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  static const List<Widget> _widgetOptions = <Widget>[
-    Text(
-      'Ana Sayfa',
-      style: optionStyle,
-    ),
-    Text(
-      'Son Dakika',
-      style: optionStyle,
-    ),
-    Text(
-      'Ekonomi',
-      style: optionStyle,
-    ),
-    Text(
-      'Spor',
-      style: optionStyle,
-    ),
-    Text(
-      'Sağlık',
-      style: optionStyle,
-    ),
-    Text(
-      'Ayarlar',
-      style: optionStyle,
-    ),
-  ];
+class _HomePageState extends State<HomePage> {
+  int pageIndex = 0;
 
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
+  final pages = [
+    const Page1(),
+    const Page2(),
+    const Page3(),
+    const Page4(),
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xffC4DFCB),
       appBar: AppBar(
-        title: const Text('KERTU NEWS'),
+        leading: Icon(
+          Icons.menu,
+          color: Theme.of(context).primaryColor,
+        ),
+        title: Text(
+          "Geeks For Geeks",
+          style: TextStyle(
+            color: Theme.of(context).primaryColor,
+            fontSize: 25,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+        centerTitle: true,
+        backgroundColor: Colors.white,
       ),
-      body: Center(
-        child: _widgetOptions.elementAt(_selectedIndex),
+      body: pages[pageIndex],
+      bottomNavigationBar: buildMyNavBar(context),
+    );
+  }
+
+  Container buildMyNavBar(BuildContext context) {
+    return Container(
+      height: 60,
+      decoration: BoxDecoration(
+        color: Theme.of(context).primaryColor,
+        borderRadius: const BorderRadius.only(
+          topLeft: Radius.circular(20),
+          topRight: Radius.circular(20),
+        ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Ana Sayfa',
-            backgroundColor: Colors.blue,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          IconButton(
+            enableFeedback: false,
+            onPressed: () {
+              setState(() {
+                pageIndex = 0;
+              });
+            },
+            icon: pageIndex == 0
+                ? const Icon(
+                    Icons.home_filled,
+                    color: Colors.white,
+                    size: 35,
+                  )
+                : const Icon(
+                    Icons.home_outlined,
+                    color: Colors.white,
+                    size: 35,
+                  ),
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.whatshot),
-            label: 'Son Dakika',
-            backgroundColor: Colors.red,
+          IconButton(
+            enableFeedback: false,
+            onPressed: () {
+              setState(() {
+                pageIndex = 1;
+              });
+            },
+            icon: pageIndex == 1
+                ? const Icon(
+                    Icons.work_rounded,
+                    color: Colors.white,
+                    size: 35,
+                  )
+                : const Icon(
+                    Icons.work_outline_outlined,
+                    color: Colors.white,
+                    size: 35,
+                  ),
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.attach_money),
-            label: 'Ekonomi',
-            backgroundColor: Colors.purple,
+          IconButton(
+            enableFeedback: false,
+            onPressed: () {
+              setState(() {
+                pageIndex = 2;
+              });
+            },
+            icon: pageIndex == 2
+                ? const Icon(
+                    Icons.widgets_rounded,
+                    color: Colors.white,
+                    size: 35,
+                  )
+                : const Icon(
+                    Icons.widgets_outlined,
+                    color: Colors.white,
+                    size: 35,
+                  ),
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.sports_soccer),
-            label: 'Spor',
-            backgroundColor: Colors.green,
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.health_and_safety),
-            label: 'Sağlık',
-            backgroundColor: Colors.grey,
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
-            label: 'Ayarlar',
-            backgroundColor: Colors.blue,
+          IconButton(
+            enableFeedback: false,
+            onPressed: () {
+              setState(() {
+                pageIndex = 3;
+              });
+            },
+            icon: pageIndex == 3
+                ? const Icon(
+                    Icons.person,
+                    color: Colors.white,
+                    size: 35,
+                  )
+                : const Icon(
+                    Icons.person_outline,
+                    color: Colors.white,
+                    size: 35,
+                  ),
           ),
         ],
-        currentIndex: _selectedIndex,
-        selectedItemColor: Colors.black,
-        onTap: _onItemTapped,
+      ),
+    );
+  }
+}
+
+class Page1 extends StatelessWidget {
+  const Page1({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Icon(
+          Icons.home,
+        ),
+        Icon(
+          Icons.home,
+        ),
+        Icon(
+          Icons.home,
+        ),
+        OutlinedButton(
+          onPressed: () {},
+          child: Text('Looks like an OutlineButton'),
+        )
+      ],
+    );
+  }
+}
+
+class Page2 extends StatelessWidget {
+  const Page2({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: const Color(0xffC4DFCB),
+      child: Center(
+        child: Text(
+          "Page Number 2",
+          style: TextStyle(
+            color: Colors.green[900],
+            fontSize: 45,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class Page3 extends StatelessWidget {
+  const Page3({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: const Color(0xffC4DFCB),
+      child: Center(
+        child: Text(
+          "Page Number 3",
+          style: TextStyle(
+            color: Colors.green[900],
+            fontSize: 45,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class Page4 extends StatelessWidget {
+  const Page4({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: const Color(0xffC4DFCB),
+      child: Center(
+        child: Text(
+          "Page Number 4",
+          style: TextStyle(
+            color: Colors.green[900],
+            fontSize: 45,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
       ),
     );
   }
