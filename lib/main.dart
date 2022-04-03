@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Bottom NavBar Demo',
       theme: ThemeData(
-        primaryColor: const Color(0xff2F8D46),
+        primaryColor: Color.fromARGB(255, 196, 80, 80),
         splashColor: Colors.transparent,
         highlightColor: Colors.transparent,
         hoverColor: Colors.transparent,
@@ -44,14 +44,14 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xffC4DFCB),
+      backgroundColor: Color.fromARGB(255, 211, 168, 168),
       appBar: AppBar(
         leading: Icon(
-          Icons.menu,
+          Icons.newspaper,
           color: Theme.of(context).primaryColor,
         ),
         title: Text(
-          "Geeks For Geeks",
+          "KERTU NEWS",
           style: TextStyle(
             color: Theme.of(context).primaryColor,
             fontSize: 25,
@@ -68,7 +68,7 @@ class _HomePageState extends State<HomePage> {
 
   Container buildMyNavBar(BuildContext context) {
     return Container(
-      height: 60,
+      height: 50,
       decoration: BoxDecoration(
         color: Theme.of(context).primaryColor,
         borderRadius: const BorderRadius.only(
@@ -166,22 +166,105 @@ class Page1 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Icon(
-          Icons.home,
+    return Container(
+      child: Container(
+        padding: const EdgeInsets.all(20),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Row(
+              children: [
+                Card(
+                  child: InkWell(
+                    splashColor: Colors.blue.withAlpha(30),
+                    onTap: () {
+                      debugPrint('Card tapped.');
+                    },
+                    child: const SizedBox(
+                      width: 177,
+                      height: 100,
+                      child: Text('A card that can be tapped'),
+                    ),
+                  ),
+                ),
+                Card(
+                  child: InkWell(
+                    splashColor: Colors.blue.withAlpha(30),
+                    onTap: () {
+                      debugPrint('Card tapped.');
+                    },
+                    child: const SizedBox(
+                      width: 177,
+                      height: 100,
+                      child: Text('A card that can be tapped'),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            Row(
+              children: [
+                Card(
+                  child: InkWell(
+                    splashColor: Colors.blue.withAlpha(30),
+                    onTap: () {
+                      debugPrint('Card tapped.');
+                    },
+                    child: const SizedBox(
+                      width: 177,
+                      height: 100,
+                      child: Text('A card that can be tapped'),
+                    ),
+                  ),
+                ),
+                Card(
+                  child: InkWell(
+                    splashColor: Colors.blue.withAlpha(30),
+                    onTap: () {
+                      debugPrint('Card tapped.');
+                    },
+                    child: const SizedBox(
+                      width: 177,
+                      height: 100,
+                      child: Text('A card that can be tapped'),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            Row(
+              children: [
+                Card(
+                  child: InkWell(
+                    splashColor: Colors.blue.withAlpha(30),
+                    onTap: () {
+                      debugPrint('Card tapped.');
+                    },
+                    child: const SizedBox(
+                      width: 177,
+                      height: 100,
+                      child: Text('A card that can be tapped'),
+                    ),
+                  ),
+                ),
+                Card(
+                  child: InkWell(
+                    splashColor: Colors.blue.withAlpha(30),
+                    onTap: () {
+                      debugPrint('Card tapped.');
+                    },
+                    child: const SizedBox(
+                      width: 177,
+                      height: 100,
+                      child: Text('A card that can be tapped'),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ],
         ),
-        Icon(
-          Icons.home,
-        ),
-        Icon(
-          Icons.home,
-        ),
-        OutlinedButton(
-          onPressed: () {},
-          child: Text('Looks like an OutlineButton'),
-        )
-      ],
+      ),
     );
   }
 }
@@ -192,7 +275,7 @@ class Page2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: const Color(0xffC4DFCB),
+      color: Color.fromARGB(255, 211, 168, 168),
       child: Center(
         child: Text(
           "Page Number 2",
@@ -213,7 +296,7 @@ class Page3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: const Color(0xffC4DFCB),
+      color: Color.fromARGB(255, 211, 168, 168),
       child: Center(
         child: Text(
           "Page Number 3",
@@ -234,7 +317,7 @@ class Page4 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: const Color(0xffC4DFCB),
+      color: Color.fromARGB(255, 211, 168, 168),
       child: Center(
         child: Text(
           "Page Number 4",
