@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'insertnews.dart';
 
 void main() {
   runApp(const MyApp());
@@ -178,7 +179,10 @@ class Page1 extends StatelessWidget {
                   child: InkWell(
                     splashColor: Colors.blue.withAlpha(30),
                     onTap: () {
-                      debugPrint('Card tapped.');
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const news1()),
+                      );
                     },
                     child: const SizedBox(
                       width: 177,
@@ -196,6 +200,36 @@ class Page1 extends StatelessWidget {
                     child: const SizedBox(
                       width: 177,
                       height: 100,
+                      child: Text('A card that can be tapped'),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            Row(
+              children: [
+                Card(
+                  child: InkWell(
+                    splashColor: Colors.blue.withAlpha(30),
+                    onTap: () {
+                      debugPrint('Card tapped.');
+                    },
+                    child: const SizedBox(
+                      width: 177,
+                      height: 20,
+                      child: Text('A card that can be tapped'),
+                    ),
+                  ),
+                ),
+                Card(
+                  child: InkWell(
+                    splashColor: Colors.blue.withAlpha(30),
+                    onTap: () {
+                      debugPrint('Card tapped.');
+                    },
+                    child: const SizedBox(
+                      width: 177,
+                      height: 20,
                       child: Text('A card that can be tapped'),
                     ),
                   ),
@@ -242,6 +276,36 @@ class Page1 extends StatelessWidget {
                     },
                     child: const SizedBox(
                       width: 177,
+                      height: 20,
+                      child: Text('A card that can be tapped'),
+                    ),
+                  ),
+                ),
+                Card(
+                  child: InkWell(
+                    splashColor: Colors.blue.withAlpha(30),
+                    onTap: () {
+                      debugPrint('Card tapped.');
+                    },
+                    child: const SizedBox(
+                      width: 177,
+                      height: 20,
+                      child: Text('A card that can be tapped'),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            Row(
+              children: [
+                Card(
+                  child: InkWell(
+                    splashColor: Colors.blue.withAlpha(30),
+                    onTap: () {
+                      debugPrint('Card tapped.');
+                    },
+                    child: const SizedBox(
+                      width: 177,
                       height: 100,
                       child: Text('A card that can be tapped'),
                     ),
@@ -256,6 +320,36 @@ class Page1 extends StatelessWidget {
                     child: const SizedBox(
                       width: 177,
                       height: 100,
+                      child: Text('A card that can be tapped'),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            Row(
+              children: [
+                Card(
+                  child: InkWell(
+                    splashColor: Colors.blue.withAlpha(30),
+                    onTap: () {
+                      debugPrint('Card tapped.');
+                    },
+                    child: const SizedBox(
+                      width: 177,
+                      height: 20,
+                      child: Text('A card that can be tapped'),
+                    ),
+                  ),
+                ),
+                Card(
+                  child: InkWell(
+                    splashColor: Colors.blue.withAlpha(30),
+                    onTap: () {
+                      debugPrint('Card tapped.');
+                    },
+                    child: const SizedBox(
+                      width: 177,
+                      height: 20,
                       child: Text('A card that can be tapped'),
                     ),
                   ),
