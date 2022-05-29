@@ -1,57 +1,55 @@
 import 'package:flutter/material.dart';
+import '../functions/inner-news.dart';
 
-class news1 extends StatelessWidget {
-  const news1({Key? key}) : super(key: key);
-
+class Newscard extends State<StatefulWidget> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Color.fromARGB(255, 211, 168, 168),
-      appBar: AppBar(
-        leading: Icon(
-          Icons.newspaper,
-          color: Theme.of(context).primaryColor,
-        ),
-        title: Text(
-          "KERTU NEWS",
-          style: TextStyle(
-            color: Theme.of(context).primaryColor,
-            fontSize: 25,
-            fontWeight: FontWeight.w600,
-          ),
-        ),
-        centerTitle: true,
-        backgroundColor: Colors.white,
-      ),
-      body: Container(
+    return Container(
+      child: Container(
         padding: const EdgeInsets.all(20),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Column(
+            Row(
               children: [
                 Card(
                   child: InkWell(
                     splashColor: Colors.blue.withAlpha(30),
-                    child: const SizedBox(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const news()),
+                      );
+                    },
+                    child: SizedBox(
                       width: 177,
                       height: 100,
-                      child: Text('A card that can be tapped'),
-                    ),
-                  ),
-                ),
-                Card(
-                  child: InkWell(
-                    splashColor: Colors.blue.withAlpha(30),
-                    child: const SizedBox(
-                      width: 177,
-                      height: 100,
-                      child: Text('A card that can be tapped'),
+                      child: Image.asset(
+                        'images/banner1.png',
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
                 ),
               ],
             ),
+            Row(
+              children: [
+                Card(
+                  child: InkWell(
+                    splashColor: Colors.blue.withAlpha(30),
+                    onTap: () {
+                      debugPrint('Card tapped.');
+                    },
+                    child: const SizedBox(
+                      width: 177,
+                      height: 20,
+                      child: Text('A card that can be tapped'),
+                    ),
+                  ),
+                ),
+              ],
+            )
           ],
         ),
       ),
