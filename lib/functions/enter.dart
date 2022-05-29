@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import '../Pages/page1.dart';
-import '../Pages/page2.dart';
-import '../Pages/page3.dart';
-import '../Pages/page4.dart';
-import '../Pages/page5.dart';
-import '../Pages/page6.dart';
+import '../screens/page1.dart';
+import '../screens/page2.dart';
+import '../screens/page3.dart';
+import '../screens/page4.dart';
+import '../screens/page5.dart';
+import '../screens/page6.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);

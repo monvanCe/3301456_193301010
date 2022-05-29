@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'functions/inner-news.dart';
-import 'Pages/page1.dart';
+import 'screens/page1.dart';
 import 'functions/enter.dart';
 
 void main() {
