@@ -13,7 +13,6 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    void _incrementCounter() {}
     return MaterialApp(
       title: 'Bottom NavBar Demo',
       theme: ThemeData(
@@ -49,7 +48,6 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    void _incrementCounter() {}
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 211, 168, 168),
       appBar: AppBar(

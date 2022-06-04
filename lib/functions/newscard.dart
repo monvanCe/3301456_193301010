@@ -43,13 +43,13 @@ class Newscard extends State<StatefulWidget> {
                     },
                     child: const SizedBox(
                       width: 177,
-                      height: 20,
+                      height: 100,
                       child: Text('bas banaaağğh'),
                     ),
                   ),
                 ),
               ],
-            )
+            ),
           ],
         ),
       ),
