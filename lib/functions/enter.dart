@@ -6,7 +6,6 @@ import '../screens/page3.dart';
 import '../screens/page4.dart';
 import '../screens/page5.dart';
 import '../screens/page6.dart';
-import 'color.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
