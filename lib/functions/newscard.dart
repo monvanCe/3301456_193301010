@@ -44,7 +44,7 @@ class Newscard extends State<StatefulWidget> {
                     child: const SizedBox(
                       width: 177,
                       height: 20,
-                      child: Text('A card that can be tapped'),
+                      child: Text('bas banaaağğh'),
                     ),
                   ),
                 ),

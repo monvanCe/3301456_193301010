@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+
 import '../screens/page1.dart';
 import '../screens/page2.dart';
 import '../screens/page3.dart';
 import '../screens/page4.dart';
 import '../screens/page5.dart';
 import '../screens/page6.dart';
+import 'color.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -12,6 +14,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    void _incrementCounter() {}
     return MaterialApp(
       title: 'Bottom NavBar Demo',
       theme: ThemeData(
@@ -47,6 +50,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    void _incrementCounter() {}
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 211, 168, 168),
       appBar: AppBar(
